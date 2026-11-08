@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexbox media query</title>
+    <title>Pseudo-clases y Pseudo-elementos CSS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <style>
@@ -21,32 +21,36 @@
         .caja3 {
             min-height: 300px;
             background-color: #25878A;
-            color: rgb(41, 38, 33);
+            color: #ffffff;
             padding: 20px;
         }
 
         .caja4 {
             min-height: 300px;
             background-color: #CAFFE0;
-            color: rgb(82, 78, 78);
+            color: rgb(41, 38, 33);
             padding: 20px;
         }
 
         .caja5 {
             min-height: 300px;
             background-color: #B7E1BF;
+            color: rgb(41, 38, 33);
+            padding: 20px;
         }
 
         .caja6 {
             min-height: 300px;
             background-color: #F2FFF6;
-            color: rgb(100, 99, 98);
+            color: rgb(82, 78, 78);
             padding: 20px;
         }
 
         .caja7 {
             min-height: 300px;
             background-color: #27C5EA;
+            color: rgb(41, 38, 33);
+            padding: 20px;
         }
 
         .caja8 {
@@ -59,19 +63,22 @@
         .caja9 {
             min-height: 300px;
             background-color: #ACD1FD;
+            color: rgb(41, 38, 33);
+            padding: 20px;
         }
 
         .caja10 {
             min-height: 300px;
             background-color: #7892FF;
-            color: rgb(92, 85, 85);
+            color: white;
             padding: 20px;
         }
 
         .caja11 {
             min-height: 300px;
             background-color: #AED5F6;
-
+            color: rgb(41, 38, 33);
+            padding: 20px;
         }
 
         .caja12 {
@@ -92,26 +99,28 @@
             min-height: 300px;
             background-color: #3D518C;
             color: whitesmoke;
-
+            padding: 20px;
         }
 
         .caja15 {
             min-height: 300px;
             background-color: #1C2BC2;
             color: whitesmoke;
+            padding: 20px;
         }
 
         .caja16 {
             min-height: 300px;
             background-color: #0A1542;
             color: whitesmoke;
+            padding: 20px;
         }
 
         .caja17 {
             min-height: 300px;
             background-color: #031227;
             color: whitesmoke;
-
+            padding: 20px;
         }
 
         .caja18 {
@@ -125,24 +134,28 @@
             min-height: 300px;
             background-color: #61369C;
             color: whitesmoke;
+            padding: 20px;
         }
 
         .caja20 {
             min-height: 300px;
             background-color: #512E56;
             color: whitesmoke;
+            padding: 20px;
         }
 
         .caja21 {
             min-height: 300px;
             background-color: #8C4D70;
             color: whitesmoke;
+            padding: 20px;
         }
 
         .caja22 {
             min-height: 300px;
             background-color: #D978AD;
             color: whitesmoke;
+            padding: 20px;
         }
 
         .btn-outline-light {
@@ -157,52 +170,150 @@
 
     <div class="container-fluid">
         <div class="row">
-            <nav
-                class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 caja1 d-flex p-4 justify-content-center flex-wrap">
-                <a class="btn btn-outline-light d-flex align-items-center" href="#tema1" role="button">
+            <nav class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 caja1 d-flex p-4 justify-content-center flex-wrap">
+                <a class="btn btn-outline-light d-flex align-items-center" href="index.html" role="button">
                     Estructura y Sintaxis
+                    <img src="img/btn-e.webp" height="50px" alt="Estructura y Sintaxis">
                 </a>
                 <a class="btn btn-outline-light d-flex align-items-center" href="#tema2" role="button">
                     Niveles de Especificidad
+                    <img src="img/btn-n.webp" height="50px" alt="Niveles de Especificidad">
                 </a>
-                <a class="btn btn-outline-light d-flex align-items-center" href="#tema3" role="button">
+                <a class="btn btn-outline-light d-flex align-items-center" href="pseudo.html" role="button">
                     Pseudo clases y Pseudo elementos
+                    <img src="img/btn-pseudo.webp" height="50px" alt="pseudo clases y elementos">
                 </a>
                 <a class="btn btn-outline-light d-flex align-items-center" href="#tema4" role="button">
                     Box Model
+                    <img src="img/btn-bm.webp" height="50px" alt="box model">
                 </a>
             </nav>
+
             <header class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-12 col-xxl-12 p-0 caja2">
                 <img src="img/pseudo_header.jpg" alt="img header" width="100%" height="100%">
             </header>
 
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 caja3">
-                <h1>Pseudo-clases</h1>
-                <p>Una pseudoclase CSS es una palabra clave que se añade a los selectores y que especifica un estado
-                    especial del elemento seleccionado. Por ejemplo, <strong>:hover</strong> aplicará un estilo cuando
-                    el usuario haga
-                    hover sobre el elemento especificado por el selector.</p>
+                <h2>Pseudo-clases (<code>:</code>)</h2>
+                <p>Una pseudo-clase selecciona un elemento en un <strong>estado dinámico u orden específico</strong> sin alterar el HTML.</p>
+                <p><strong>Sintaxis:</strong> <code>selector:pseudo-clase { propiedad: valor; }</code></p>
+                <p><small>Ejemplo habitual: cambiar el fondo de un botón cuando el mouse pasa por encima.</small></p>
             </div>
 
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 caja4">caja4</div>
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja5">caja5</div>
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja6">caja6</div>
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja7">caja7</div>
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja8">caja8</div>
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja9">caja9</div>
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja10">caja10</div>
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja11">caja11</div>
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja12">caja12</div>
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja13">caja13</div>
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja14">caja14</div>
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja15">caja15</div>
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja16">caja16</div>
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja17">caja17</div>
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja18">caja18</div>
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja19">caja19</div>
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja20">caja20</div>
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja21">caja21</div>
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja22">caja22</div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 caja4">
+                <h2>Pseudo-elementos (<code>::</code>)</h2>
+                <p>Un pseudo-elemento da estilo a una <strong>parte específica</strong> de un elemento o inserta contenido virtual nuevo.</p>
+                <p><strong>Sintaxis:</strong> <code>selector::pseudo-elemento { propiedad: valor; }</code></p>
+                <p><small>Ejemplo habitual: poner un icono antes de un enlace o cambiar la primera letra de un párrafo.</small></p>
+            </div>
+
+            <!-- Fila de cajas 5 a 22 (Casos de uso y ejemplos prácticos) -->
+            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja5">
+                <h5><code>:hover</code></h5>
+                <p>Se activa cuando el usuario pasa el cursor por encima del elemento.</p>
+                <p><code>a:hover { color: red; }</code></p>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja6">
+                <h5><code>:active</code></h5>
+                <p>Aplica mientras el usuario mantiene presionado el clic sobre el elemento.</p>
+                <p><code>button:active { transform: scale(0.95); }</code></p>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja7">
+                <h5><code>:focus</code></h5>
+                <p>Aplica cuando un campo de texto o botón recibe el foco o selección de teclado.</p>
+                <p><code>input:focus { border-color: blue; }</code></p>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja8">
+                <h5><code>:visited</code></h5>
+                <p>Cambia el aspecto de un enlace que el navegador ya visitó previamente.</p>
+                <p><code>a:visited { color: purple; }</code></p>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja9">
+                <h5><code>:first-child</code></h5>
+                <p>Selecciona un elemento solo si es el primer hijo de su contenedor padre.</p>
+                <p><code>li:first-child { font-weight: bold; }</code></p>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja10">
+                <h5><code>:last-child</code></h5>
+                <p>Selecciona un elemento solo si es el último hijo de su contenedor.</p>
+                <p><code>p:last-child { margin-bottom: 0; }</code></p>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja11">
+                <h5><code>:nth-child(n)</code></h5>
+                <p>Selecciona elementos por su número de orden (ej. <code>2n</code> para filas pares).</p>
+                <p><code>tr:nth-child(even) { background: #eee; }</code></p>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja12">
+                <h5><code>:not()</code></h5>
+                <p>Excluye de la regla a todos los elementos que coincidan con la condición dada.</p>
+                <p><code>button:not(.btn-danger) { color: white; }</code></p>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja13">
+                <h5><code>:checked</code></h5>
+                <p>Aplica estilos a casillas de verificación (checkboxes) o radios seleccionados.</p>
+                <p><code>input:checked + label { color: green; }</code></p>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja14">
+                <h5><code>:disabled</code></h5>
+                <p>Estiliza elementos de formulario que están desactivados por el atributo HTML.</p>
+                <p><code>button:disabled { opacity: 0.5; }</code></p>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja15">
+                <h5><code>::before</code></h5>
+                <p>Inserta contenido decorativo antes del contenido real del elemento.</p>
+                <p><code>h2::before { content: "★ "; }</code></p>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja16">
+                <h5><code>::after</code></h5>
+                <p>Inserta contenido o íconos justo después del contenido del elemento.</p>
+                <p><code>a::after { content: " →"; }</code></p>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja17">
+                <h5><code>::first-letter</code></h5>
+                <p>Permite estilizar de forma aislada la primera letra de un bloque de texto.</p>
+                <p><code>p::first-letter { font-size: 2em; }</code></p>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja18">
+                <h5><code>::first-line</code></h5>
+                <p>Aplica estilos únicamente a la primera línea visible de un texto.</p>
+                <p><code>p::first-line { text-transform: uppercase; }</code></p>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja19">
+                <h5><code>::selection</code></h5>
+                <p>Cambia los colores de fondo y texto cuando el usuario resalta palabras.</p>
+                <p><code>::selection { background: yellow; }</code></p>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja20">
+                <h5><code>::placeholder</code></h5>
+                <p>Modifica el color y la fuente del texto pista dentro de un campo de entrada.</p>
+                <p><code>input::placeholder { color: gray; }</code></p>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja21">
+                <h5><code>::marker</code></h5>
+                <p>Permite cambiar el color o estilo de las viñetas o números de una lista <code>&lt;ul&gt;</code> / <code>&lt;ol&gt;</code>.</p>
+                <p><code>li::marker { color: blue; }</code></p>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja22">
+                <h5>Resumen</h5>
+                <p>Usa <code>:</code> para <strong>estados</strong> (interacción/posición) y <code>::</code> para <strong>subpartes o agregados</strong> visuales del elemento.</p>
+            </div>
         </div>
     </div>
 </body>

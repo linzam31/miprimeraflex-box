@@ -5,16 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pseudo-clases y Pseudo-elementos CSS</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
         .caja1 {
             min-height: 150px;
-            background-color: #1C587E;
+            background-color: #203740;
+            position: relative;
+            z-index: 1000;
         }
 
         .caja2 {
-            max-height: 300px;
+            height: 300px;
             background-color: #F8F4E9;
         }
 
@@ -158,164 +160,353 @@
             padding: 20px;
         }
 
-        .btn-outline-light {
+        .btn-outline-primary {
             border-radius: 20px;
-            margin: 14px;
+            margin: 6px;
+        }
+
+        code {
+            color: #c175ec;
+            background-color: #1a1d20;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        @media (min-width: 768px) and (max-width: 1199.98px) {
+            .caja4 {
+                display: none !important;
+            }
+        }
+
+        .demo-box {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .demo-hover {
+            transition: all 0.3s ease;
+        }
+
+        .demo-hover:hover {
+            background-color: #ffc107 !important;
+            color: #000 !important;
+            transform: translateY(-3px);
+        }
+
+        .demo-active:active {
+            transform: scale(0.9);
+            background-color: #dc3545 !important;
+            color: white !important;
+        }
+
+        .demo-focus:focus {
+            outline: 3px solid #ff5722 !important;
+            background-color: #ffffff !important;
+            color: #000000 !important;
+        }
+
+        .demo-visited {
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .demo-visited:visited {
+            color: #ffc107 !important;
+        }
+
+        .demo-first li:first-child {
+            background-color: #25878A;
+            color: white;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        .demo-last li:last-child {
+            background-color: #ffc107;
+            color: black;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        .demo-nth li:nth-child(even) {
+            background-color: rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+        }
+
+        .demo-not button:not(.especial) {
+            background-color: #dc3545 !important;
+            color: white !important;
+            border: none;
+        }
+
+        .demo-checkbox:checked+span {
+            color: #ffc107;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .demo-disabled:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .demo-before::before {
+            content: "★ ";
+            color: #ffc107;
+            font-size: 1.3rem;
+        }
+
+        .demo-after::after {
+            content: " ➔";
+            color: #0dcaf0;
+            font-weight: bold;
+        }
+
+        .demo-first-letter::first-letter {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #ffc107;
+            float: left;
+            margin-right: 6px;
+            line-height: 1;
+        }
+
+        .demo-first-line::first-line {
+            font-weight: bold;
+            color: #0dcaf0;
+            text-transform: uppercase;
+        }
+
+        .demo-selection::selection {
+            background-color: #ff007f;
+            color: #ffffff;
+        }
+
+        .demo-placeholder::placeholder {
+            color: #ffc107 !important;
+            font-style: italic;
+        }
+
+        .demo-marker li::marker {
+            color: #ffc107;
+            font-size: 1.4rem;
         }
     </style>
-
 </head>
 
 <body>
 
     <div class="container-fluid">
         <div class="row">
-            <nav class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 caja1 d-flex p-4 justify-content-center flex-wrap">
-                <a class="btn btn-outline-light d-flex align-items-center" href="index.html" role="button">
-                    Estructura y Sintaxis
-                    <img src="img/btn-e.webp" height="50px" alt="Estructura y Sintaxis">
-                </a>
-                <a class="btn btn-outline-light d-flex align-items-center" href="niveles_esp.html" role="button">
-                    Niveles de Especificidad
-                    <img src="img/btn-n.webp" height="50px" alt="Niveles de Especificidad">
-                </a>
-                <a class="btn btn-outline-light d-flex align-items-center" href="pseudo.html" role="button">
-                    Pseudo clases y Pseudo elementos
-                    <img src="img/btn-pseudo.webp" height="50px" alt="pseudo clases y elementos">
-                </a>
-                <a class="btn btn-outline-light d-flex align-items-center" href="#tema4" role="button">
-                    Box Model
-                    <img src="img/btn-bm.webp" height="50px" alt="box model">
-                </a>
+
+            <nav class="navbar navbar-expand-xl caja1 p-3">
+                <div class="container-fluid justify-content-center">
+                    <button class="navbar-toggler bg-light my-2" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#menuCSS" aria-controls="menuCSS" aria-expanded="false" aria-label="Abrir menú">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-center flex-wrap gap-2 my-2" id="menuCSS">
+                        <a class="btn btn-outline-primary d-flex align-items-center" href="index.html" role="button">
+                            Estructura y Sintaxis
+                            <img src="img/btn-e.webp" height="40px" alt="Estructura y Sintaxis">
+                        </a>
+                        <a class="btn btn-outline-primary d-flex align-items-center" href="niveles_esp.html" role="button">
+                            Niveles de Especificidad
+                            <img src="img/btn-n.webp" height="40px" alt="Niveles de Especificidad">
+                        </a>
+                        <a class="btn btn-outline-primary d-flex align-items-center" href="pseudo.html" role="button">
+                            Pseudo clases y Pseudo elementos
+                            <img src="img/btn-pseudo.webp" height="40px" alt="pseudo clases y elementos">
+                        </a>
+                        <a class="btn btn-outline-primary d-flex align-items-center" href="box.html" role="button">
+                            Box Model
+                            <img src="img/btn-bm.webp" height="40px" alt="box model">
+                        </a>
+                    </div>
+                </div>
             </nav>
 
-            <header class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-12 col-xxl-12 p-0 caja2">
-                <img src="img/pseudo_header.jpg" alt="img header" width="100%" height="100%">
+            <header class="col-12 p-0 caja2">
+                <img src="img/pseudo_header.jpg" alt="img header" width="100%" height="100%" style="object-fit: cover;">
             </header>
 
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 caja3">
                 <h2>Pseudo-clases (<code>:</code>)</h2>
-                <p>Una pseudo-clase selecciona un elemento en un <strong>estado dinámico u orden específico</strong> sin alterar el HTML.</p>
-                <p><strong>Sintaxis:</strong> <code>selector:pseudo-clase { propiedad: valor; }</code></p>
-                <p><small>Ejemplo habitual: cambiar el fondo de un botón cuando el mouse pasa por encima.</small></p>
+                <p>Una pseudo-clase especifica un <strong>estado especial</strong> del elemento seleccionado.</p>
+                <div class="demo-box text-center">
+                    <button class="btn btn-light demo-hover">Prueba interactiva</button>
+                </div>
             </div>
 
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 caja4">
-                <h2>Pseudo-elementos (<code>::</code>)</h2>
-                <p>Un pseudo-elemento da estilo a una <strong>parte específica</strong> de un elemento o inserta contenido virtual nuevo.</p>
-                <p><strong>Sintaxis:</strong> <code>selector::pseudo-elemento { propiedad: valor; }</code></p>
-                <p><small>Ejemplo habitual: poner un icono antes de un enlace o cambiar la primera letra de un párrafo.</small></p>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 caja4 d-flex align-items-center justify-content-center">
+                <img src="img/infografia.jfif" alt="Infografía Pseudo-elementos" class="img-fluid rounded" style="max-height: 260px; object-fit: contain;">
             </div>
 
-            <!-- Fila de cajas 5 a 22 (Casos de uso y ejemplos prácticos) -->
             <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja5">
                 <h5><code>:hover</code></h5>
-                <p>Se activa cuando el usuario pasa el cursor por encima del elemento.</p>
-                <p><code>a:hover { color: red; }</code></p>
+                <p><small>Al pasar el mouse:</small></p>
+                <div class="demo-box text-center">
+                    <button class="btn btn-dark btn-sm demo-hover">Pasa el mouse</button>
+                </div>
             </div>
 
             <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja6">
                 <h5><code>:active</code></h5>
-                <p>Aplica mientras el usuario mantiene presionado el clic sobre el elemento.</p>
-                <p><code>button:active { transform: scale(0.95); }</code></p>
+                <p><small>Al hacer clic sostenido:</small></p>
+                <div class="demo-box text-center">
+                    <button class="btn btn-outline-dark btn-sm demo-active">Haz clic aquí</button>
+                </div>
             </div>
 
             <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja7">
                 <h5><code>:focus</code></h5>
-                <p>Aplica cuando un campo de texto o botón recibe el foco o selección de teclado.</p>
-                <p><code>input:focus { border-color: blue; }</code></p>
+                <p><small>Al seleccionar el campo:</small></p>
+                <div class="demo-box">
+                    <input type="text" class="form-control form-control-sm demo-focus" placeholder="Haz clic aquí...">
+                </div>
             </div>
 
             <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja8">
                 <h5><code>:visited</code></h5>
-                <p>Cambia el aspecto de un enlace que el navegador ya visitó previamente.</p>
-                <p><code>a:visited { color: purple; }</code></p>
+                <p><small>Enlace visitado:</small></p>
+                <div class="demo-box text-center">
+                    <a href="https://www.sena.edu.co" target="_blank" class="demo-visited">Ir a SENA</a>
+                </div>
             </div>
 
             <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja9">
                 <h5><code>:first-child</code></h5>
-                <p>Selecciona un elemento solo si es el primer hijo de su contenedor padre.</p>
-                <p><code>li:first-child { font-weight: bold; }</code></p>
+                <p><small>Primer hijo destacado:</small></p>
+                <ul class="demo-first list-unstyled mb-0">
+                    <li>Elemento 1</li>
+                    <li>Elemento 2</li>
+                </ul>
             </div>
 
             <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja10">
                 <h5><code>:last-child</code></h5>
-                <p>Selecciona un elemento solo si es el último hijo de su contenedor.</p>
-                <p><code>p:last-child { margin-bottom: 0; }</code></p>
+                <p><small>Último hijo destacado:</small></p>
+                <ul class="demo-last list-unstyled mb-0">
+                    <li>Elemento 1</li>
+                    <li>Elemento 2</li>
+                </ul>
             </div>
 
             <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja11">
-                <h5><code>:nth-child(n)</code></h5>
-                <p>Selecciona elementos por su número de orden (ej. <code>2n</code> para filas pares).</p>
-                <p><code>tr:nth-child(even) { background: #eee; }</code></p>
+                <h5><code>:nth-child()</code></h5>
+                <p><small>Filas pares sombreadas:</small></p>
+                <ul class="demo-nth list-unstyled mb-0">
+                    <li>Fila 1</li>
+                    <li>Fila 2 (Par)</li>
+                    <li>Fila 3</li>
+                </ul>
             </div>
 
             <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja12">
                 <h5><code>:not()</code></h5>
-                <p>Excluye de la regla a todos los elementos que coincidan con la condición dada.</p>
-                <p><code>button:not(.btn-danger) { color: white; }</code></p>
+                <p><small>Aplica a lo que no sea .especial:</small></p>
+                <div class="demo-not d-flex gap-1 justify-content-center">
+                    <button class="btn btn-sm btn-light">Normal</button>
+                    <button class="btn btn-sm btn-light especial">Excluido</button>
+                </div>
             </div>
 
             <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja13">
                 <h5><code>:checked</code></h5>
-                <p>Aplica estilos a casillas de verificación (checkboxes) o radios seleccionados.</p>
-                <p><code>input:checked + label { color: green; }</code></p>
+                <p><small>Al marcar la casilla:</small></p>
+                <div class="demo-box">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input demo-checkbox">
+                        <span>Marcar opción</span>
+                    </label>
+                </div>
             </div>
 
             <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja14">
                 <h5><code>:disabled</code></h5>
-                <p>Estiliza elementos de formulario que están desactivados por el atributo HTML.</p>
-                <p><code>button:disabled { opacity: 0.5; }</code></p>
+                <p><small>Elemento bloqueado:</small></p>
+                <div class="demo-box text-center">
+                    <button class="btn btn-light btn-sm demo-disabled" disabled>Deshabilitado</button>
+                </div>
             </div>
 
             <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja15">
                 <h5><code>::before</code></h5>
-                <p>Inserta contenido decorativo antes del contenido real del elemento.</p>
-                <p><code>h2::before { content: "★ "; }</code></p>
+                <p><small>Inserta icono antes:</small></p>
+                <div class="demo-box">
+                    <span class="demo-before">Destacado</span>
+                </div>
             </div>
 
             <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja16">
                 <h5><code>::after</code></h5>
-                <p>Inserta contenido o íconos justo después del contenido del elemento.</p>
-                <p><code>a::after { content: " →"; }</code></p>
+                <p><small>Inserta flecha después:</small></p>
+                <div class="demo-box">
+                    <span class="demo-after">Continuar</span>
+                </div>
             </div>
 
             <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja17">
                 <h5><code>::first-letter</code></h5>
-                <p>Permite estilizar de forma aislada la primera letra de un bloque de texto.</p>
-                <p><code>p::first-letter { font-size: 2em; }</code></p>
+                <p><small>Letra capitular:</small></p>
+                <div class="demo-box">
+                    <p class="demo-first-letter mb-0">SENA Cenigraf Bogotá</p>
+                </div>
             </div>
 
             <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja18">
                 <h5><code>::first-line</code></h5>
-                <p>Aplica estilos únicamente a la primera línea visible de un texto.</p>
-                <p><code>p::first-line { text-transform: uppercase; }</code></p>
+                <p><small>Primera línea:</small></p>
+                <div class="demo-box">
+                    <p class="demo-first-line mb-0">Línea en mayúsculas.<br><small>Segunda línea normal.</small></p>
+                </div>
             </div>
 
             <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja19">
                 <h5><code>::selection</code></h5>
-                <p>Cambia los colores de fondo y texto cuando el usuario resalta palabras.</p>
-                <p><code>::selection { background: yellow; }</code></p>
+                <p><small>Resalta este texto:</small></p>
+                <div class="demo-box">
+                    <p class="demo-selection mb-0">¡Selecciona este texto con el mouse!</p>
+                </div>
             </div>
 
             <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja20">
                 <h5><code>::placeholder</code></h5>
-                <p>Modifica el color y la fuente del texto pista dentro de un campo de entrada.</p>
-                <p><code>input::placeholder { color: gray; }</code></p>
+                <p><small>Texto pista de color:</small></p>
+                <div class="demo-box">
+                    <input type="text" class="form-control form-control-sm bg-dark text-white demo-placeholder"
+                        placeholder="Pista dorada...">
+                </div>
             </div>
 
             <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja21">
                 <h5><code>::marker</code></h5>
-                <p>Permite cambiar el color o estilo de las viñetas o números de una lista <code>&lt;ul&gt;</code> / <code>&lt;ol&gt;</code>.</p>
-                <p><code>li::marker { color: blue; }</code></p>
+                <p><small>Viñeta personalizada:</small></p>
+                <ul class="demo-marker mb-0">
+                    <li>Ítem A</li>
+                    <li>Ítem B</li>
+                </ul>
             </div>
 
             <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja22">
                 <h5>Resumen</h5>
-                <p>Usa <code>:</code> para <strong>estados</strong> (interacción/posición) y <code>::</code> para <strong>subpartes o agregados</strong> visuales del elemento.</p>
+                <div class="demo-box text-center">
+                    <span class="badge bg-light text-dark"><code>:</code> Estado</span>
+                    <span class="badge bg-warning text-dark"><code>::</code> Parte</span>
+                </div>
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
 </body>
 
 </html>

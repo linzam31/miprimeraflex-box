@@ -5,510 +5,366 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Niveles de Especificidad</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-<style>
-    .caja1 {
-        min-height: 150px;
-        background-color: #2B1E1A;
-        position: relative;
-        z-index: 1000;
-    }
-
-    .caja2 {
-        max-height: 300px;
-        background-color: #3D2B24;
-    }
-
-    .caja3 {
-        min-height: 300px;
-        background-color: #543A2E;
-        color: antiquewhite;
-        padding: 20px;
-    }
-
-    .caja4 {
-        min-height: 300px;
-        background-color: #7A5442;
-        color: antiquewhite;
-        padding: 20px;
-    }
-
-    .caja5 {
-        min-height: 300px;
-        background-color: #EBD8C3;
-        color: #2B1E1A;
-        padding: 20px;
-    }
-
-    .caja6 {
-        min-height: 300px;
-        background-color: #F7EDE2;
-        color: #4A3531;
-        padding: 20px;
-    }
-
-    .caja7 {
-        min-height: 300px;
-        background-color: #D4A373;
-        color: #2B1E1A;
-        padding: 20px;
-    }
-
-    .caja8 {
-        min-height: 300px;
-        background-color: #C86D51;
-        color: white;
-        padding: 20px;
-    }
-
-    .caja9 {
-        min-height: 300px;
-        background-color: #E6CCB2;
-        color: #2B1E1A;
-        padding: 20px;
-    }
-
-    .caja10 {
-        min-height: 300px;
-        background-color: #D4843E;
-        color: white;
-        padding: 20px;
-    }
-
-    .caja11 {
-        min-height: 300px;
-        background-color: #DDB892;
-        color: #2B1E1A;
-        padding: 20px;
-    }
-
-    .caja12 {
-        min-height: 300px;
-        background-color: #E09F3E;
-        color: white;
-        padding: 20px;
-    }
-
-    .caja13 {
-        min-height: 300px;
-        background-color: #B07D62;
-        color: white;
-        padding: 20px;
-    }
-
-    .caja14 {
-        min-height: 300px;
-        background-color: #9C6644;
-        color: whitesmoke;
-        padding: 20px;
-    }
-
-    .caja15 {
-        min-height: 300px;
-        background-color: #7F5539;
-        color: whitesmoke;
-        padding: 20px;
-    }
-
-    .caja16 {
-        min-height: 300px;
-        background-color: #6B3E26;
-        color: whitesmoke;
-        padding: 20px;
-    }
-
-    .caja17 {
-        min-height: 300px;
-        background-color: #432818;
-        color: whitesmoke;
-        padding: 20px;
-    }
-
-    .caja18 {
-        min-height: 300px;
-        background-color: #5C4742;
-        color: white;
-        padding: 20px;
-    }
-
-    .caja19 {
-        min-height: 300px;
-        background-color: #8C4A32;
-        color: whitesmoke;
-        padding: 20px;
-    }
-
-    .caja20 {
-        min-height: 300px;
-        background-color: #6F1D1B;
-        color: whitesmoke;
-        padding: 20px;
-    }
-
-    .caja21 {
-        min-height: 300px;
-        background-color: #99582A;
-        color: whitesmoke;
-        padding: 20px;
-    }
-
-    .caja22 {
-        min-height: 300px;
-        background-color: #BB9457;
-        color: #2B1E1A;
-        padding: 20px;
-    }
-
-    .btn-outline-primary, .btn-outline-success {
-        border-radius: 20px;
-        margin: 6px;
-        color: #E09F3E;
-        border-color: #E09F3E;
-    }
-
-    .btn-outline-primary:hover, .btn-outline-success:hover {
-        background-color: #E09F3E;
-        border-color: #E09F3E;
-        color: #2B1E1A;
-    }
-
-    code {
-        color: #c175ec;
-        background-color: #1a1d20;
-        padding: 2px 6px;
-        border-radius: 4px;
-    }
-
-    @media (min-width: 768px) and (max-width: 1199.98px) {
-        .caja4 {
-            display: none !important;
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #2B1E1A;
+            color: #F7EDE2;
         }
-    }
 
-    .demo-box {
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 8px;
-        padding: 10px;
-        margin-top: 10px;
-    }
+        .caja1 {
+            min-height: 140px;
+            background-color: #2B1E1A;
+            position: relative;
+            z-index: 1000;
+        }
 
-    .demo-hover {
-        transition: all 0.3s ease;
-    }
+        .caja2 {
+            min-height: 300px;
+            background-color: #3D2B24;
+        }
 
-    .demo-hover:hover {
-        background-color: #ffc107 !important;
-        color: #000 !important;
-        transform: translateY(-3px);
-    }
+        .btn-outline-primary {
+            border-radius: 20px;
+            margin: 6px;
+            color: #E09F3E;
+            border-color: #E09F3E;
+            transition: all 0.3s ease;
+        }
 
-    .demo-active:active {
-        transform: scale(0.9);
-        background-color: #dc3545 !important;
-        color: white !important;
-    }
+        .btn-outline-primary:hover {
+            background-color: #E09F3E;
+            border-color: #E09F3E;
+            color: #2B1E1A;
+        }
 
-    .demo-focus:focus {
-        outline: 3px solid #ff5722 !important;
-        background-color: #ffffff !important;
-        color: #000000 !important;
-    }
+        code {
+            color: #FFC107;
+            background-color: #1F1512;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
 
-    .demo-visited {
-        color: #ffffff;
-        font-weight: bold;
-    }
+        .bloque-intro {
+            background-color: #3D2B24;
+            padding: 40px 20px;
+            animation: aparecer 0.8s ease;
+        }
 
-    .demo-visited:visited {
-        color: #ffc107 !important;
-    }
+        .caja-concepto {
+            background-color: #543A2E;
+            border-left: 5px solid #E09F3E;
+            border-radius: 10px;
+            padding: 25px;
+            height: 100%;
+        }
 
-    .demo-first li:first-child {
-        background-color: #543A2E;
-        color: white;
-        font-weight: bold;
-        padding: 3px 8px;
-        border-radius: 4px;
-    }
+        .nivel-barra {
+            padding: 12px 18px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            transition: transform 0.3s ease;
+        }
 
-    .demo-last li:last-child {
-        background-color: #ffc107;
-        color: black;
-        font-weight: bold;
-        padding: 3px 8px;
-        border-radius: 4px;
-    }
+        .nivel-barra:hover {
+            transform: translateX(8px);
+        }
 
-    .demo-nth li:nth-child(even) {
-        background-color: rgba(0, 0, 0, 0.2);
-        font-weight: bold;
-    }
+        .barra-1 {
+            background-color: #6F1D1B;
+            color: #FFFFFF;
+        }
 
-    .demo-not button:not(.especial) {
-        background-color: #6F1D1B !important;
-        color: white !important;
-        border: none;
-    }
+        .barra-2 {
+            background-color: #9C6644;
+            color: #FFFFFF;
+        }
 
-    .demo-checkbox:checked+span {
-        color: #ffc107;
-        font-weight: bold;
-        text-decoration: underline;
-    }
+        .barra-3 {
+            background-color: #D4843E;
+            color: #FFFFFF;
+        }
 
-    .demo-disabled:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-    }
+        .barra-4 {
+            background-color: #E09F3E;
+            color: #2B1E1A;
+        }
 
-    .demo-before::before {
-        content: "★ ";
-        color: #ffc107;
-        font-size: 1.3rem;
-    }
+        .barra-5 {
+            background-color: #EBD8C3;
+            color: #2B1E1A;
+        }
 
-    .demo-after::after {
-        content: " ➔";
-        color: #0dcaf0;
-        font-weight: bold;
-    }
+        .bloque-niveles {
+            background-color: #EBD8C3;
+            color: #2B1E1A;
+            padding: 45px 20px;
+        }
 
-    .demo-first-letter::first-letter {
-        font-size: 2.2rem;
-        font-weight: bold;
-        color: #ffc107;
-        float: left;
-        margin-right: 6px;
-        line-height: 1;
-    }
+        .tarjeta-nivel {
+            border-radius: 12px;
+            padding: 22px;
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    .demo-first-line::first-line {
-        font-weight: bold;
-        color: #0dcaf0;
-        text-transform: uppercase;
-    }
+        .tarjeta-nivel:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 18px rgba(43, 30, 26, 0.25);
+        }
 
-    .demo-selection::selection {
-        background-color: #ff007f;
-        color: #ffffff;
-    }
+        .color-inline {
+            background-color: #7A5442;
+            color: #F7EDE2;
+        }
 
-    .demo-placeholder::placeholder {
-        color: #ffc107 !important;
-        font-style: italic;
-    }
+        .color-id {
+            background-color: #99582A;
+            color: #F7EDE2;
+        }
 
-    .demo-marker li::marker {
-        color: #ffc107;
-        font-size: 1.4rem;
-    }
-</style>
+        .color-clase {
+            background-color: #D4A373;
+            color: #2B1E1A;
+        }
 
+        .color-etiqueta {
+            background-color: #F7EDE2;
+            color: #2B1E1A;
+            border: 1px solid #D4A373;
+        }
+
+        .bloque-ejemplos {
+            background-color: #543A2E;
+            padding: 45px 20px;
+        }
+
+        .tarjeta-ejemplo {
+            background-color: #2B1E1A;
+            border-radius: 12px;
+            padding: 20px;
+            height: 100%;
+            border: 1px solid #7A5442;
+            transition: border-color 0.3s ease;
+        }
+
+        .tarjeta-ejemplo:hover {
+            border-color: #E09F3E;
+        }
+
+        .bloque-reglas {
+            background-color: #2B1E1A;
+            padding: 45px 20px;
+        }
+
+        .caja-regla-1 {
+            background-color: #8C4A32;
+            color: #F7EDE2;
+            border-radius: 12px;
+            padding: 25px;
+            height: 100%;
+        }
+
+        .caja-regla-2 {
+            background-color: #BB9457;
+            color: #2B1E1A;
+            border-radius: 12px;
+            padding: 25px;
+            height: 100%;
+        }
+
+        @media (min-width: 768px) and (max-width: 1199.98px) {
+            .ocultar-tablet {
+                display: none !important;
+            }
+        }
+
+
+    </style>
 </head>
 
 <body>
 
-    <div class="container-fluid">
-        <div class="row">
-            <nav class="navbar navbar-expand-xl caja1 p-3">
-                <div class="container-fluid justify-content-center">
-                    <button class="navbar-toggler bg-light my-2" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#menuCSS" aria-controls="menuCSS" aria-expanded="false" aria-label="Abrir menú">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-xl caja1 p-3">
+            <div class="container-fluid justify-content-center">
+                <button class="navbar-toggler bg-light my-2" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#menuCSS" aria-controls="menuCSS" aria-expanded="false" aria-label="Abrir menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                    <div class="collapse navbar-collapse justify-content-center flex-wrap gap-2 my-2" id="menuCSS">
-                        <a class="btn btn-outline-primary d-flex align-items-center" href="index.html" role="button">
-                            Estructura y Sintaxis
-                            <img src="img/btn-e.webp" height="40px" alt="Estructura y Sintaxis">
-                        </a>
-                        <a class="btn btn-outline-primary d-flex align-items-center" href="#tema2" role="button">
-                            Niveles de Especificidad
-                            <img src="img/btn-n.webp" height="40px" alt="Niveles de Especificidad">
-                        </a>
-                        <a class="btn btn-outline-primary d-flex align-items-center" href="pseudo.html" role="button">
-                            Pseudo clases y Pseudo elementos
-                            <img src="img/btn-pseudo.webp" height="40px" alt="pseudo clases y elementos">
-                        </a>
-                        <a class="btn btn-outline-primary d-flex align-items-center" href="#tema4" role="button">
-                            Box Model
-                            <img src="img/btn-bm.webp" height="40px" alt="box model">
-                        </a>
+                <div class="collapse navbar-collapse justify-content-center flex-wrap gap-2 my-2" id="menuCSS">
+                    <a class="btn btn-outline-primary d-flex align-items-center" href="index.html" role="button">
+                        Estructura y Sintaxis
+                        <img src="img/btn-e.webp" height="40px" alt="Estructura y Sintaxis">
+                    </a>
+                    <a class="btn btn-outline-primary d-flex align-items-center" href="niveles_esp.html" role="button">
+                        Niveles de Especificidad
+                        <img src="img/btn-n.webp" height="40px" alt="Niveles de Especificidad">
+                    </a>
+                    <a class="btn btn-outline-primary d-flex align-items-center" href="pseudo.html" role="button">
+                        Pseudo clases y Pseudo elementos
+                        <img src="img/btn-pseudo.webp" height="40px" alt="pseudo clases y elementos">
+                    </a>
+                    <a class="btn btn-outline-primary d-flex align-items-center" href="box.html" role="button">
+                        Box Model
+                        <img src="img/btn-bm.webp" height="40px" alt="box model">
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <header class="col-12 p-0 caja2">
+            <img src="img/header_ne.jpg" alt="Niveles de Especificidad" width="100%" height="100%"
+                style="object-fit: cover;">
+        </header>
+
+        <section class="bloque-intro">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-12 col-lg-5">
+                        <div class="caja-concepto">
+                            <h2>¿Qué es la Especificidad?</h2>
+                            <p>Es el sistema de puntos que usa el navegador para decidir qué regla CSS gana cuando dos o más selectores apuntan al mismo elemento.</p>
+                            <p class="mb-0">Siempre se aplica el estilo del selector que tenga mayor jerarquía.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-7 ocultar-tablet">
+                        <h5 class="mb-3">Orden de Jerarquía (De mayor a menor peso)</h5>
+                        <div class="nivel-barra barra-1">
+                            <span>1. !important</span>
+                            <span>Máxima prioridad</span>
+                        </div>
+                        <div class="nivel-barra barra-2">
+                            <span>2. Estilos en línea (style="")</span>
+                            <span>1000 pts</span>
+                        </div>
+                        <div class="nivel-barra barra-3">
+                            <span>3. Selectores de ID (#id)</span>
+                            <span>100 pts</span>
+                        </div>
+                        <div class="nivel-barra barra-4">
+                            <span>4. Clases y Pseudo-clases (.clase)</span>
+                            <span>10 pts</span>
+                        </div>
+                        <div class="nivel-barra barra-5">
+                            <span>5. Etiquetas y Pseudo-elementos (p, div)</span>
+                            <span>1 pt</span>
+                        </div>
                     </div>
                 </div>
-            </nav>
+            </div>
+        </section>
 
-            <header class="col-12 p-0 caja2">
-                <img src="img/header_ne.jpg" alt="img header" width="100%" height="100%" style="object-fit: cover;">
-            </header>
+        <section class="bloque-niveles">
+            <div class="container">
+                <h2 class="text-center mb-4">Los 4 Niveles de Puntaje</h2>
+                <div class="row g-4">
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="tarjeta-nivel color-inline">
+                            <span class="badge bg-dark mb-2">1000 puntos</span>
+                            <h4>Estilos en Línea</h4>
+                            <p>Se escriben directamente dentro de la etiqueta HTML usando el atributo <code>style</code>.</p>
+                            <p class="mb-0"><small>Ejemplo: <code>&lt;p style="color: gold;"&gt;</code></small></p>
+                        </div>
+                    </div>
 
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 caja3">
-                <h2>¿Qué es la Especificidad?</h2>
-                <p>Es el sistema de puntuación que utiliza el navegador para determinar qué reglas CSS aplicar cuando múltiples selectores compiten por estilizar el mismo elemento.</p>
-                <div class="demo-box text-center">
-                    <span class="badge bg-warning text-dark">Jerarquía de Reglas</span>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="tarjeta-nivel color-id">
+                            <span class="badge bg-dark mb-2">100 puntos</span>
+                            <h4>Identificadores (ID)</h4>
+                            <p>Selectores únicos que empiezan con numeral. Tienen mucha más fuerza que una clase.</p>
+                            <p class="mb-0"><small>Ejemplo: <code>#menu-principal</code></small></p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="tarjeta-nivel color-clase">
+                            <span class="badge bg-dark mb-2">10 puntos</span>
+                            <h4>Clases y Pseudo-clases</h4>
+                            <p>Incluye clases, atributos y estados como <code>:hover</code> o <code>:focus</code>.</p>
+                            <p class="mb-0"><small>Ejemplo: <code>.tarjeta</code></small></p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="tarjeta-nivel color-etiqueta">
+                            <span class="badge bg-dark mb-2">1 punto</span>
+                            <h4>Etiquetas</h4>
+                            <p>Selectores generales de elementos HTML y pseudo-elementos como <code>::before</code>.</p>
+                            <p class="mb-0"><small>Ejemplo: <code>h1, p, div</code></small></p>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-6 caja4">
-                <h2>Cálculo de Puntos</h2>
-                <p>Se calcula contando los componentes de cada categoría de selector en una escala ponderada de izquierda a derecha.</p>
-                <div class="demo-box">
-                    <p class="mb-0">¡Las reglas con mayor puntaje siempre ganan la colisión!</p>
+        <section class="bloque-ejemplos">
+            <div class="container">
+                <h2 class="text-center mb-4">Ejemplos de Suma de Puntos</h2>
+                <div class="row g-4">
+                    <div class="col-12 col-md-4">
+                        <div class="tarjeta-ejemplo">
+                            <h5>Selector Simple</h5>
+                            <p><code>div p</code></p>
+                            <p class="mb-2">Tiene 2 etiquetas (1 + 1).</p>
+                            <span class="badge bg-warning text-dark">Total: 2 puntos</span>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <div class="tarjeta-ejemplo">
+                            <h5>Selector Combinado</h5>
+                            <p><code>.caja p</code></p>
+                            <p class="mb-2">Tiene 1 clase (10) + 1 etiqueta (1).</p>
+                            <span class="badge bg-warning text-dark">Total: 11 puntos</span>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <div class="tarjeta-ejemplo">
+                            <h5>Selector Específico</h5>
+                            <p><code>#header .activo</code></p>
+                            <p class="mb-2">Tiene 1 ID (100) + 1 clase (10).</p>
+                            <span class="badge bg-warning text-dark">Total: 110 puntos</span>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja5">
-                <h5>Estilos en Línea</h5>
-                <p><small>Peso: 1,000 puntos</small></p>
-                <div class="demo-box text-center">
-                    <span style="color: yellow; font-weight: bold;">style="..."</span>
+        <section class="bloque-reglas">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-12 col-md-6">
+                        <div class="caja-regla-1">
+                            <h4>La Excepción: !important</h4>
+                            <p>Cuando se agrega <code>!important</code> al final de una propiedad, esa regla ignora la especificidad y gana sobre todas las demás.</p>
+                            <p class="mb-0">Se recomienda usarlo solo en casos muy necesarios para no complicar el código.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <div class="caja-regla-2">
+                            <h4>Empate por Orden de Cascada</h4>
+                            <p>Si dos selectores tienen exactamente el mismo puntaje (por ejemplo, dos clases diferentes en el mismo botón), gana la regla que esté escrita más abajo en el archivo CSS.</p>
+                            <p class="mb-0">El selector universal <code>*</code> vale 0 puntos.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja6">
-                <h5>IDs</h5>
-                <p><small>Peso: 100 puntos</small></p>
-                <div class="demo-box text-center">
-                    <code>#identificador</code>
-                </div>
-            </div>
-
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja7">
-                <h5>Clases</h5>
-                <p><small>Peso: 10 puntos</small></p>
-                <div class="demo-box text-center">
-                    <code>.clase-css</code>
-                </div>
-            </div>
-
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja8">
-                <h5>Pseudo-clases</h5>
-                <p><small>Peso: 10 puntos</small></p>
-                <div class="demo-box text-center">
-                    <code>:hover / :focus</code>
-                </div>
-            </div>
-
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja9">
-                <h5>Atributos</h5>
-                <p><small>Peso: 10 puntos</small></p>
-                <div class="demo-box text-center">
-                    <code>[type="text"]</code>
-                </div>
-            </div>
-
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja10">
-                <h5>Elementos (Etiquetas)</h5>
-                <p><small>Peso: 1 punto</small></p>
-                <div class="demo-box text-center">
-                    <code>p, h1, div</code>
-                </div>
-            </div>
-
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja11">
-                <h5>Pseudo-elementos</h5>
-                <p><small>Peso: 1 punto</small></p>
-                <div class="demo-box text-center">
-                    <code>::before / ::after</code>
-                </div>
-            </div>
-
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja12">
-                <h5>Selector Universal</h5>
-                <p><small>Peso: 0 puntos</small></p>
-                <div class="demo-box text-center">
-                    <code>* (asterisco)</code>
-                </div>
-            </div>
-
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja13">
-                <h5>Combinadores</h5>
-                <p><small>Suma de puntos</small></p>
-                <div class="demo-box text-center">
-                    <code>> , + , ~</code>
-                </div>
-            </div>
-
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja14">
-                <h5>La Regla !important</h5>
-                <p><small>Anula todo el sistema</small></p>
-                <div class="demo-box text-center">
-                    <code>color: red !important;</code>
-                </div>
-            </div>
-
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja15">
-                <h5>Ejemplo 1</h5>
-                <p><small><code>div p</code> = 0,0,2</small></p>
-                <div class="demo-box text-center">
-                    <span>Dos etiquetas</span>
-                </div>
-            </div>
-
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja16">
-                <h5>Ejemplo 2</h5>
-                <p><small><code>.caja p</code> = 0,1,1</small></p>
-                <div class="demo-box text-center">
-                    <span>1 clase + 1 etiqueta</span>
-                </div>
-            </div>
-
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja17">
-                <h5>Ejemplo 3</h5>
-                <p><small><code>#menu .activo</code> = 0,1,1,0</small></p>
-                <div class="demo-box text-center">
-                    <span>1 ID + 1 clase</span>
-                </div>
-            </div>
-
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja18">
-                <h5>Herencia</h5>
-                <p><small>0 puntos</small></p>
-                <div class="demo-box text-center">
-                    <span>Los estilos heredados pierden ante cualquier selector directo</span>
-                </div>
-            </div>
-
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja19">
-                <h5>Colisión de Reglas</h5>
-                <p><small>Mismo puntaje</small></p>
-                <div class="demo-box text-center">
-                    <span>Gana la última regla escrita en el archivo CSS</span>
-                </div>
-            </div>
-
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja20">
-                <h5>Buenas Prácticas</h5>
-                <p><small>Evitar abusos</small></p>
-                <div class="demo-box text-center">
-                    <span>No usar IDs para todo ni abusar de !important</span>
-                </div>
-            </div>
-
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja21">
-                <h5>Orden de Cascada</h5>
-                <p><small>Prioridad final</small></p>
-                <div class="demo-box text-center">
-                    <span>Origen > Especificidad > Orden</span>
-                </div>
-            </div>
-
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja22">
-                <h5>Resumen</h5>
-                <div class="demo-box text-center">
-                    <span class="badge bg-dark text-white">ID > Clase > Etiqueta</span>
-                </div>
-            </div>
-
-        </div>
-
+        </section>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
-        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
 </body>
 
 </html>

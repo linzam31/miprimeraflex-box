@@ -9,52 +9,42 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
         body {
-            background-color: #2B1E1A;
-            color: #F7EDE2;
+            background-color: #282B4A;
+            color: #EEEBDA;
         }
 
         .caja1 {
-            min-height: 140px;
-            background-color: #2B1E1A;
+            min-height: 150px;
+            background-color: #0A1542;
             position: relative;
             z-index: 1000;
         }
 
+
         .caja2 {
-            min-height: 300px;
-            background-color: #3D2B24;
+            background-color: #282B4A;
         }
 
         .btn-outline-primary {
             border-radius: 20px;
             margin: 6px;
-            color: #E09F3E;
-            border-color: #E09F3E;
-            transition: all 0.3s ease;
         }
-
-        .btn-outline-primary:hover {
-            background-color: #E09F3E;
-            border-color: #E09F3E;
-            color: #2B1E1A;
-        }
-
         code {
-            color: #FFC107;
-            background-color: #1F1512;
+            color: #D98A4E;
+            background-color: #1D1F36;
             padding: 2px 6px;
             border-radius: 4px;
         }
 
         .bloque-intro {
-            background-color: #3D2B24;
+            background-color: #3B406B;
             padding: 40px 20px;
             animation: aparecer 0.8s ease;
         }
 
         .caja-concepto {
-            background-color: #543A2E;
-            border-left: 5px solid #E09F3E;
+            background-color: #282B4A;
+            border-left: 5px solid #D98A4E;
             border-radius: 10px;
             padding: 25px;
             height: 100%;
@@ -75,33 +65,33 @@
         }
 
         .barra-1 {
-            background-color: #6F1D1B;
-            color: #FFFFFF;
+            background-color: #C45D4B;
+            color: #EEEBDA;
         }
 
         .barra-2 {
-            background-color: #9C6644;
-            color: #FFFFFF;
+            background-color: #D98A4E;
+            color: #282B4A;
         }
 
         .barra-3 {
-            background-color: #D4843E;
-            color: #FFFFFF;
+            background-color: #5C679E;
+            color: #EEEBDA;
         }
 
         .barra-4 {
-            background-color: #E09F3E;
-            color: #2B1E1A;
+            background-color: #282B4A;
+            color: #EEEBDA;
         }
 
         .barra-5 {
-            background-color: #EBD8C3;
-            color: #2B1E1A;
+            background-color: #EEEBDA;
+            color: #282B4A;
         }
 
         .bloque-niveles {
-            background-color: #EBD8C3;
-            color: #2B1E1A;
+            background-color: #EEEBDA;
+            color: #282B4A;
             padding: 45px 20px;
         }
 
@@ -114,64 +104,65 @@
 
         .tarjeta-nivel:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 18px rgba(43, 30, 26, 0.25);
+            box-shadow: 0 8px 18px rgba(40, 43, 74, 0.25);
         }
 
         .color-inline {
-            background-color: #7A5442;
-            color: #F7EDE2;
+            background-color: #282B4A;
+            color: #EEEBDA;
         }
 
         .color-id {
-            background-color: #99582A;
-            color: #F7EDE2;
+            background-color: #5C679E;
+            color: #EEEBDA;
         }
 
         .color-clase {
-            background-color: #D4A373;
-            color: #2B1E1A;
+            background-color: #D98A4E;
+            color: #282B4A;
         }
 
         .color-etiqueta {
-            background-color: #F7EDE2;
-            color: #2B1E1A;
-            border: 1px solid #D4A373;
+            background-color: #F7F5EA;
+            color: #282B4A;
+            border: 1px solid #DDD8C0;
         }
 
         .bloque-ejemplos {
-            background-color: #543A2E;
+            background-color: #282B4A;
             padding: 45px 20px;
         }
 
         .tarjeta-ejemplo {
-            background-color: #2B1E1A;
+            background-color: #1D1F36;
             border-radius: 12px;
             padding: 20px;
             height: 100%;
-            border: 1px solid #7A5442;
+            border: 1px solid #5C679E;
             transition: border-color 0.3s ease;
         }
 
         .tarjeta-ejemplo:hover {
-            border-color: #E09F3E;
+            border-color: #D98A4E;
         }
 
         .bloque-reglas {
-            background-color: #2B1E1A;
+            background-color: #DDD8C0;
+            color: #282B4A;
             padding: 45px 20px;
         }
 
         .caja-regla-1 {
-            background-color: #8C4A32;
-            color: #F7EDE2;
+            background-color: #C45D4B;
+            color: #EEEBDA;
             border-radius: 12px;
             padding: 25px;
             height: 100%;
         }
 
         .caja-regla-2 {
-            background-color: #BB9457;
-            color: #2B1E1A;
+            background-color: #3B406B;
+            color: #EEEBDA;
             border-radius: 12px;
             padding: 25px;
             height: 100%;
@@ -183,44 +174,42 @@
             }
         }
 
-
     </style>
 </head>
 
 <body>
 
     <div class="container-fluid p-0">
-        <nav class="navbar navbar-expand-xl caja1 p-3">
-            <div class="container-fluid justify-content-center">
-                <button class="navbar-toggler bg-light my-2" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#menuCSS" aria-controls="menuCSS" aria-expanded="false" aria-label="Abrir menú">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <nav class="navbar navbar-expand-xl caja1 p-3">
+                <div class="container-fluid justify-content-center">
+                    <button class="navbar-toggler bg-light my-2" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#menuCSS" aria-controls="menuCSS" aria-expanded="false" aria-label="Abrir menú">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-                <div class="collapse navbar-collapse justify-content-center flex-wrap gap-2 my-2" id="menuCSS">
-                    <a class="btn btn-outline-primary d-flex align-items-center" href="index.html" role="button">
-                        Estructura y Sintaxis
-                        <img src="img/btn-e.webp" height="40px" alt="Estructura y Sintaxis">
-                    </a>
-                    <a class="btn btn-outline-primary d-flex align-items-center" href="niveles_esp.html" role="button">
-                        Niveles de Especificidad
-                        <img src="img/btn-n.webp" height="40px" alt="Niveles de Especificidad">
-                    </a>
-                    <a class="btn btn-outline-primary d-flex align-items-center" href="pseudo.html" role="button">
-                        Pseudo clases y Pseudo elementos
-                        <img src="img/btn-pseudo.webp" height="40px" alt="pseudo clases y elementos">
-                    </a>
-                    <a class="btn btn-outline-primary d-flex align-items-center" href="box.html" role="button">
-                        Box Model
-                        <img src="img/btn-bm.webp" height="40px" alt="box model">
-                    </a>
+                    <div class="collapse navbar-collapse justify-content-center flex-wrap gap-2 my-2" id="menuCSS">
+                        <a class="btn btn-outline-primary d-flex align-items-center" href="index.html" role="button">
+                            Estructura y Sintaxis
+                            <img src="img/btn-e.webp" height="40px" alt="Estructura y Sintaxis">
+                        </a>
+                        <a class="btn btn-outline-primary d-flex align-items-center" href="niveles_esp.html" role="button">
+                            Niveles de Especificidad
+                            <img src="img/btn-n.webp" height="40px" alt="Niveles de Especificidad">
+                        </a>
+                        <a class="btn btn-outline-primary d-flex align-items-center" href="pseudo.html" role="button">
+                            Pseudo clases y Pseudo elementos
+                            <img src="img/btn-pseudo.webp" height="40px" alt="pseudo clases y elementos">
+                        </a>
+                        <a class="btn btn-outline-primary d-flex align-items-center" href="box.html" role="button">
+                            Box Model
+                            <img src="img/btn-bm.webp" height="40px" alt="box model">
+                        </a>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
 
         <header class="col-12 p-0 caja2">
-            <img src="img/header_ne.jpg" alt="Niveles de Especificidad" width="100%" height="100%"
-                style="object-fit: cover;">
+            <img src="img/header_ne.webp" alt="Niveles de Especificidad" class="img-fluid w-100">
         </header>
 
         <section class="bloque-intro">
@@ -267,7 +256,7 @@
                 <div class="row g-4">
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="tarjeta-nivel color-inline">
-                            <span class="badge bg-dark mb-2">1000 puntos</span>
+                            <span class="badge bg-warning text-dark mb-2">1000 puntos</span>
                             <h4>Estilos en Línea</h4>
                             <p>Se escriben directamente dentro de la etiqueta HTML usando el atributo <code>style</code>.</p>
                             <p class="mb-0"><small>Ejemplo: <code>&lt;p style="color: gold;"&gt;</code></small></p>

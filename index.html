@@ -10,11 +10,13 @@
     <style>
         .caja1 {
             min-height: 150px;
-            background-color: #192B38;
+            background-color: #0A1542;
+            position: relative;
+            z-index: 1000;
         }
 
         .caja2 {
-            height: 300px;
+            max-height: 300px;
             background-color: #22424B;
         }
 
@@ -74,9 +76,9 @@
             padding: 20px;
         }
 
-        .btn-outline-success {
+        .btn-outline-primary {
             border-radius: 20px;
-            margin: 14px;
+            margin: 6px;
         }
     </style>
 </head>
@@ -85,27 +87,36 @@
     <div class="container-fluid">
         <div class="row">
 
-            <nav class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 caja1 d-flex p-4 justify-content-center flex-wrap">
-                <a class="btn btn-outline-success d-flex align-items-center" href="#tema1" role="button">
-                    Estructura y Sintaxis
-                    <img src="img/btn-e.webp" height="50px" alt="Estructura y Sintaxis">
-                </a>
-                <a class="btn btn-outline-success d-flex align-items-center" href="niveles_esp.html" role="button">
-                    Niveles de Especificidad
-                    <img src="img/btn-n.webp" height="50px" alt="Niveles de Especificidad">
-                </a>
-                <a class="btn btn-outline-success d-flex align-items-center" href="pseudo.html" role="button">
-                    Pseudo clases y Pseudo elementos
-                    <img src="img/btn-pseudo.webp" height="50px" alt="pseudo clases y elementos">
-                </a>
-                <a class="btn btn-outline-success d-flex align-items-center" href="box.html" role="button">
-                    Box Model
-                    <img src="img/btn-bm.webp" height="50px" alt="box model">
-                </a>
+            <nav class="navbar navbar-expand-xl caja1 p-3">
+                <div class="container-fluid justify-content-center">
+                    <button class="navbar-toggler bg-light my-2" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#menuCSS" aria-controls="menuCSS" aria-expanded="false" aria-label="Abrir menú">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-center flex-wrap gap-2 my-2" id="menuCSS">
+                        <a class="btn btn-outline-primary d-flex align-items-center" href="index.html" role="button">
+                            Estructura y Sintaxis
+                            <img src="img/btn-e.webp" height="40px" alt="Estructura y Sintaxis">
+                        </a>
+                        <a class="btn btn-outline-primary d-flex align-items-center" href="niveles_esp.html" role="button">
+                            Niveles de Especificidad
+                            <img src="img/btn-n.webp" height="40px" alt="Niveles de Especificidad">
+                        </a>
+                        <a class="btn btn-outline-primary d-flex align-items-center" href="pseudo.html" role="button">
+                            Pseudo clases y Pseudo elementos
+                            <img src="img/btn-pseudo.webp" height="40px" alt="pseudo clases y elementos">
+                        </a>
+                        <a class="btn btn-outline-primary d-flex align-items-center" href="box.html" role="button">
+                            Box Model
+                            <img src="img/btn-bm.webp" height="40px" alt="box model">
+                        </a>
+                    </div>
+                </div>
             </nav>
 
             <header class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-12 col-xxl-12 p-0 caja2">
-                <img src="img/header.jpg" alt="img header" width="100%" height="100%" style="object-fit: cover;">
+                <img src="img/header.webp" alt="img header" width="100%" height="100%" style="object-fit: cover;">
             </header>
 
             <aside id="tema1" class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-4 col-xxl-4 caja3">
@@ -118,7 +129,7 @@
                 </ul>
             </aside>
             <section class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-4 col-xxl-4 caja4 d-flex p-0 align-items-center justify-content-center">
-                <img src="img/infografia.jfif" alt="Infografía Estructura" width="100%">
+                <img src="img/infografia.webp" alt="Infografía Estructura" width="100%">
             </section>
 
             <aside id="tema2" class="col-6 col-sm-6 col-md-10 col-lg-10 col-xl-4 col-xxl-4 caja5">

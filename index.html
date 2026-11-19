@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Estructura y Sintaxis CSS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <style>
@@ -121,56 +121,54 @@
 
             <aside id="tema1" class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-4 col-xxl-4 caja3">
                 <h4>Estructura y Sintaxis</h4>
-                <p>CSS funciona con reglas de estilo. Cada regla le dice al navegador cómo debe verse un elemento HTML.</p>
+                <p>CSS funciona mediante reglas de estilo que indican al navegador cómo presentar y dar formato a los documentos HTML.</p>
                 <ul>
-                    <li><strong>Selector:</strong> A quién se aplica (ej: h1, p, .clase).</li>
-                    <li><strong>Propiedad:</strong> Lo que vas a cambiar (ej: color).</li>
-                    <li><strong>Valor:</strong> El nuevo resultado (ej: red).</li>
+                    <li><strong>Selector:</strong> Apunta al elemento HTML que deseas estilizar (ej: <code>h1</code>, <code>p</code>, <code>.clase</code>).</li>
+                    <li><strong>Declaración:</strong> Contiene una o más parejas de propiedad y valor separadas por dos puntos.</li>
                 </ul>
             </aside>
             <section class="col-6 col-sm-6 col-md-2 col-lg-2 col-xl-4 col-xxl-4 caja4 d-flex p-0 align-items-center justify-content-center">
-                <img src="img/infografia.webp" alt="Infografía Estructura" width="100%">
+                <img src="img/caja4_index.webp" alt="Infografía Estructura" width="100%">
             </section>
 
             <aside id="tema2" class="col-6 col-sm-6 col-md-10 col-lg-10 col-xl-4 col-xxl-4 caja5">
-                <h4>Niveles de Especificidad</h4>
-                <p>Es el sistema de puntos que usa el navegador para saber qué regla aplicar si se cruzan:</p>
+                <h4>Componentes de una Regla</h4>
+                <p>La anatomía básica de un bloque de código CSS se compone de:</p>
                 <ol>
-                    <li>Etiquetas (h1, p): 1 punto</li>
-                    <li>Clases (.boton): 10 puntos</li>
-                    <li>IDs (#menu): 100 puntos</li>
-                    <li>Estilos en línea (style=""): 1000 puntos</li>
+                    <li><strong>Selector:</strong> Identificador del elemento en el DOM.</li>
+                    <li><strong>Llaves <code>{}</code>:</strong> Delimitan el bloque de código de la regla.</li>
+                    <li><strong>Propiedad:</strong> El aspecto visual a modificar (ej: <code>color</code>, <code>background</code>).</li>
+                    <li><strong>Valor:</strong> El parámetro aplicado a la propiedad (ej: <code>blue</code>, <code>15px</code>).</li>
                 </ol>
             </aside>
 
             <section id="tema3" class="col-6 col-sm-6 col-md-12 col-lg-12 col-xl-3 col-xxl-3 caja6">
-                <h4>Pseudo-clases (:)</h4>
-                <p>Dan estilo según el estado del elemento:</p>
+                <h4>Métodos de Inserción</h4>
+                <p>Las reglas de sintaxis CSS se pueden incorporar en un documento HTML de tres formas principales:</p>
                 <ul>
-                    <li>:hover (al pasar el cursor)</li>
-                    <li>:active (al hacer clic)</li>
+                    <li><strong>Externo:</strong> Mediante la etiqueta <code>&lt;link&gt;</code> conectando un archivo <code>.css</code>.</li>
+                    <li><strong>Interno:</strong> Usando un bloque <code>&lt;style&gt;</code> dentro del <code>&lt;head&gt;</code>.</li>
                 </ul>
             </section>
             <section class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja7">
-                <h4>Pseudo-elementos (::)</h4>
-                <p>Modifican partes específicas:</p>
+                <h4>Estilos en Línea</h4>
+                <p>Aplicación directa:</p>
                 <ul>
-                    <li>::before (contenido antes)</li>
-                    <li>::after (contenido después)</li>
+                    <li>Se usa el atributo <code>style</code> directamente en la etiqueta HTML.</li>
+                    <li>Ejemplo: <code>&lt;p style="color: red;"&gt;</code></li>
                 </ul>
             </section>
 
             <section id="tema4" class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja8">
-                <h4>Box Model</h4>
-                <p>En CSS todo elemento es una caja rectangular que tiene 4 capas.</p>
+                <h4>Comentarios en CSS</h4>
+                <p>Permiten documentar el código y desactivar líneas temporalmente sin borrarlas.</p>
             </section>
             <section class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-2 col-xxl-2 caja9">
-                <h4>Capas del Box Model</h4>
+                <h4>Sintaxis de Comentarios</h4>
                 <ul>
-                    <li><strong>Content:</strong> Texto o imagen.</li>
-                    <li><strong>Padding:</strong> Espacio interno.</li>
-                    <li><strong>Border:</strong> Borde.</li>
-                    <li><strong>Margin:</strong> Espacio externo.</li>
+                    <li>Se escriben encerrados entre <code>/*</code> y <code>*/</code>.</li>
+                    <li>Ejemplo: <code>/* Esto es un comentario */</code></li>
+                    <li>Son ignorados por el navegador al renderizar.</li>
                 </ul>
             </section>
 
